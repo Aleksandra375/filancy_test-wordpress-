@@ -1,0 +1,639 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+// REPEAT
+
+.mask {
+  position: relative;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+  &--dark {
+    &:before {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+  &-child {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+
+.section_title {
+  font-size: 25px;
+  letter-spacing: 0px;
+  line-height: 30px;
+  color: #363636;
+  font-weight: 700;
+  text-align: center;
+}
+
+.container {
+  width: 1170px;
+}
+
+// HEADER
+
+header {
+  height: 125px;
+  .header_block {
+    padding-top: 50px;
+    .menu {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      list-style: none;
+      li {
+        font-size: 14px;
+        letter-spacing: 0px;
+        line-height: 50px;
+        text-transform: uppercase;
+        font-weight: 500;
+        text-align: center;
+        a {
+          color: #333333;
+          text-decoration: none;
+          padding-bottom: 15px;
+          &:hover {
+            border-bottom: 5px solid #4571d5;
+          }
+        }
+      }
+    }
+    .contacts {
+      display: flex;
+      flex-direction: column;
+      &__tel {
+        font-size: 18px;
+        line-height: 25px;
+        color: #545454;
+        font-weight: 300;
+        text-align: right;
+        text-decoration: none;
+      }
+      &__btn {
+        font-size: 18px;
+        line-height: 25px;
+        color: #4571d5;
+        font-weight: 300;
+        text-align: right;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .hamburger {
+      display: block;
+      position: absolute;
+      right: 10px;
+      top: 25px;
+      transform: translateY(-50%);
+      width: 26px;
+      height: 18px;
+      span {
+        display: block;
+        background-color: #333333;
+        height: 2px;
+        width: 100%;
+        margin-bottom: 5px;
+        transition: 0.5s all;
+      }
+      &_active {
+        span {
+          margin-bottom: -2px;
+          &:nth-child(1) {
+            transform: translateY(3px) rotate(-45deg);
+          }
+          &:nth-child(2) {
+            display: none;
+          }
+          &:nth-child(3) {
+            transform: translateY(3px) rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+// BANNER
+
+.banner {
+  background-image: url('/img/baner.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position-y: 25%;
+  min-height: 490px;
+  &__text {
+    h1 {
+      font-size: 40px;
+      color: #ffffff;
+      font-weight: 700;
+    }
+    p {
+      font-size: 24px;
+      color: #ffffff;
+      font-weight: 700;
+      width: 70%;
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+  &__form {
+    width: auto;
+    height: auto;
+    background-color: #fff;
+    padding: 20px;
+    &_title {
+      font-size: 16px;
+      color: #111111;
+      font-weight: 600;
+      text-align: center;
+    }
+    form {
+      text-align: center;
+      input {
+        padding: 10px 5px;
+        margin-bottom: 15px;
+        font-size: 14px;
+        color: #747474;
+        font-weight: 400;
+        width: 100%;
+      }
+      input[type='name'] {
+        height: 80px;
+      }
+      input[type='submit'] {
+        width: 100%;
+        background-color: #e7a300;
+        color: #fff;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+// BOOKING
+
+.booking {
+  padding-top: 80px;
+
+  &__block {
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  &__wrap {
+    &_row {
+      border: 4px solid #4671d5;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto;
+      position: relative;
+      span {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        left: 50%;
+        font-size: 12px;
+        letter-spacing: 0px;
+        color: #4671d5;
+        font-weight: 700;
+      }
+    }
+    &_descr {
+      font-size: 14px;
+      color: #333333;
+      font-weight: 600;
+      text-align: center;
+      margin-top: 20px;
+    }
+  }
+  &__descr {
+    padding-top: 50px;
+    font-size: 16px;
+    color: #333333;
+    font-weight: 400;
+    text-align: center;
+  }
+  &__galery {
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    &_img {
+      width: 30%;
+    }
+  }
+  &__btn {
+    cursor: pointer;
+    padding: 10px 20px;
+    display: block;
+    margin: 0 auto;
+    width: max-content;
+    border: 2px solid #4571d5;
+    color: #4571d5;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+// POPULAR
+
+.popular {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  .cards {
+    padding-top: 30px;
+  }
+  .card {
+    width: 18rem;
+  }
+    .card-title {
+      margin-bottom: .5rem;
+      font-size: 16px;
+      line-height: 18px;
+      color: #333333;
+      font-weight: 500;
+    }
+    .card-body-title {
+      height: 5rem;
+    }
+    .custom-card__body_header_info {
+      font-size: 12px;
+      line-height: 16px;
+      color: #b5b5b5;
+      font-weight: 500;
+    }
+    .card-text {
+      font-size: 14px;
+      line-height: 20px;
+      color: #333333;
+      font-weight: 500;
+    }
+    .custom-card__body_body {
+      display: flex;
+      flex-basis: 100%;
+      ul {
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 15px;
+        padding: 0;
+        list-style-position: inside;
+        height: max-content;
+        li {
+          &::marker {
+            color: #4571d5;
+          }
+          font-size: 12px;
+          line-height: 27px;
+          color: #555555;
+          font-weight: 500;
+        }
+      }
+    }
+    .custom-card__body_footer_price {
+      font-size: 18px;
+      line-height: 20px;
+      color: #27a733;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 10px;
+    } 
+    a.btn.btn-primary {
+      background-color: #e7a300;
+      border-color: #e7a300;
+      border-radius: 0;
+      display: block;
+      width: max-content;
+      margin: 10px auto;
+  }
+}
+
+// MEDIA
+
+
+@media (max-width: 1199px) {
+  header {
+      .header_block {
+          padding-top: 30px;
+          .menu {
+            &__list {
+              font-size: 12px;
+            }
+          }
+          .contacts {
+              &__tel {
+                  font-size: 14px;
+              }
+              &__btn {
+                  font-size: 16px;
+              }
+          }
+      }
+  }
+
+  .section_title {
+      font-size: 22px;
+  }
+
+
+  .banner {
+      height: auto;
+      background-size: cover;
+      &__text {
+          h1 {
+              font-size: 28px;
+          }
+          p {
+              font-size: 18px;
+          }
+      }
+      &__form {
+          padding: 15px;
+          &_title {
+              font-size: 14px;
+          }
+          form {
+              input {
+                  font-size: 12px;
+              }
+              input[type="name"] {
+                  height: 50px;
+              }
+          }
+      }
+  }
+
+  .booking {
+      padding-top: 30px;
+      &__block {
+          padding-top: 30px;
+      }
+      &__wrap {
+          &_row {
+              width: 60px;
+              height: 60px;
+              span {
+                  font-size: 11px;
+                  font-weight: 600;
+              }
+          }
+      }
+      &__descr {
+          padding-top: 30px;
+          font-size: 14px;
+      }
+      &__galery {
+          padding: 30px 0;
+          &_img {
+            width: 30%;
+            display: block;
+            margin: 0 auto;
+          }
+      }
+      &__btn {
+          font-size: 12px;
+      }
+  }
+
+  .popular {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      &__card {
+          &_top {
+              .card-title {
+                  font-size: 14px;
+              }
+              .card-info {
+                  font-size: 10px;
+              }
+              span {
+                  font-size: 12px;
+              }
+          }
+          &_center {
+              ul {
+                  li {
+                      font-size: 10px;
+                  }
+              }
+          }
+          &_price {
+              font-size: 14px;
+          }
+          &_submit {
+              padding: 10px 20px;
+          }
+      }
+  }
+}
+
+@media (max-width: 991px) {
+
+  .container {
+    width: auto;
+}
+
+  header {
+    .header_block {
+        padding-top: 10px;
+        .menu {
+          display: none;
+          flex-direction: column;
+          background-color: #fff;
+          position: relative;
+          z-index: 10;
+          &_active {
+            display: flex;
+          }
+        }
+    }
+    
+}
+
+.banner {
+  &__text {
+    width: 100%;
+    h1 {
+      text-align: center;
+    }
+    p {
+      text-align: center;
+    }
+  }
+}
+
+.booking {
+  &__galery {
+    flex-direction: column;
+    &_img {
+      width: 100%;
+    }
+  }
+}
+
+.popular {
+  .card-group {
+    margin: 10px 0;
+  }
+}
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 18px;
+    z-index: 10;
+    span {
+      display: block;
+      background-color: #333333;
+      height: 2px;
+      width: 100%;
+      margin-bottom: 5px;
+      transition: 0.5s all;
+    }
+    &_active {
+      span {
+        margin-bottom: -2px;
+        &:nth-child(1) {
+          transform: translateY(3px) rotate(-45deg);
+        }
+        &:nth-child(2) {
+          display: none;
+        }
+        &:nth-child(3) {
+          transform: translateY(3px) rotate(45deg);
+        }
+      }
+    }
+  }
+}
+
+
+
+
+@media (max-width: 767px) {
+  .section_title {
+    padding: 0 10px;
+  }
+  .booking {
+    &__block {
+      flex-direction: column;
+    }
+    &__galery {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width:575px) {
+ header {
+   .header_block {
+    .contacts {
+      &__tel {
+          font-size: 12px;
+      }
+      &__btn {
+          font-size: 14px;
+      }
+  }
+   }
+ }
+ .section_title {
+  font-size: 20px;
+  } 
+
+ .banner {
+   &__text {
+     h1 {
+      font-size: 24px;
+     }
+     p {
+      font-size: 16px;
+     }
+   }
+ }
+
+.booking {
+  &__wrap{
+    &_row {
+      width: 55px;
+      height: 55px;
+    }
+  }
+  &__descr {
+    padding-top: 20px;
+    font-size: 12px;
+  }
+  &__galery {
+    padding: 20px 0;
+  }
+  &__btn {
+    font-size: 10px;
+  }
+}
+
+  .popular {
+    padding-top: 20px;
+    padding-bottom: 20px;
+      .card {
+        width: auto;
+      }
+      .cards {
+        padding-top: 10px;
+      }
+      .card-title {
+        font-size: 14px;
+      }
+      .card-text {
+        font-size: 12px;
+      }
+      .custom-card__body_header_info {
+        font-size: 10px;
+      }
+      .custom-card__body_body {
+        ul {
+          li {
+            font-size: 10px;
+          }
+        }
+      } 
+      .custom-card__body_footer_price {
+        font-size: 16px;
+      }
+      a.btn.btn-primary {
+        font-size: 12px;
+      }
+      .card-body {
+        padding:0.5rem 1rem;
+       }
+       
+    }
+  
+}
+
+
